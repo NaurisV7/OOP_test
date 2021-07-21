@@ -1,4 +1,4 @@
-<?php namespace Repository\Database;
+<?php namespace App\Repositories;
 
 class Database 
 {
