@@ -1,7 +1,11 @@
 <?php namespace App\Services;
 
+//use App\Repositories;
 
-class ShowDataRepository {
+echo "Services fails aiziet uz lapu";
+
+
+class ShowDataService {
     private DataRepository $repository;
 
     function __construct ()

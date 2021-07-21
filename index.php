@@ -3,6 +3,6 @@
 include 'autoload.php';
 
 
-$service = new \App\Services\ShowDataRepository;
+$service = new \App\Services\ShowDataService;
 
 var_dump($service->getData());
