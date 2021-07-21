@@ -6,6 +6,7 @@ spl_autoload_register(function ($class) {
         require $file;
         return true;
     }
+    echo $file;
     return false;
 });
 
