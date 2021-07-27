@@ -1,9 +1,6 @@
 <?php namespace App\Services;
 
-//use App\Repositories;
-
-echo "Services fails aiziet uz lapu";
-
+use App\Repositories\DataRepository;
 
 class ShowDataService {
     private DataRepository $repository;

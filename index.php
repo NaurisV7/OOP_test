@@ -5,4 +5,4 @@ include 'autoload.php';
 
 $service = new \App\Services\ShowDataService;
 
-var_dump($service->getData());
+print_r($service->getData());
