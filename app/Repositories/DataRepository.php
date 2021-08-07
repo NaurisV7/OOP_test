@@ -8,13 +8,7 @@ class DataRepository extends Database {
 
         $data = [];
         while ($row = $result->fetch_assoc()) {
-            if ($row['switcher'] === 'dvd'){
-               $data[] = array($row['id'], $row['sku'], $row['name'], $row['price'], $row['size']); 
-            } elseif ($row['switcher'] === 'furniture') {
-                $data[] = array($row['id'], $row['sku'], $row['name'], $row['price'], $row['height'], $row['width'], $row['length']);
-            } elseif ($row['switcher'] === 'book') {
-                $data[] = array($row['id'], $row['sku'], $row['name'], $row['price'], $row['weight']);
-            }
+            $data[] = array($row);
             
         }
 

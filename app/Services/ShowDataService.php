@@ -1,20 +1,19 @@
 <?php namespace App\Services;
 
-use App\Repositories\DataRepository;
+use App\Views\ProductList\GetProductList;
 
 class ShowDataService {
-    private DataRepository $repository;
+    private GetProductList $getProductList;
 
     function __construct ()
     {
-        $this->repository = new DataRepository;
+        $this->getProductList = new GetProductList;
     }
 
-    public function getData(): array
+
+    public function getData()
     {
-        return [
-            $this->repository->getData()
-        ];
+        return $this->getProductList->getList();
     }
 
 
