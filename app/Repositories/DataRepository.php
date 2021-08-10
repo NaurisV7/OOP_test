@@ -8,7 +8,7 @@ class DataRepository extends Database {
 
         $data = [];
         while ($row = $result->fetch_assoc()) {
-            $data[] = array($row);
+            $data[] = $row;
             
         }
 
