@@ -15,8 +15,4 @@ class ShowDataService {
     {
         return $this->getProductList->getList();
     }
-
-
-
-
 }
