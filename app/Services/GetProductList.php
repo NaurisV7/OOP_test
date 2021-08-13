@@ -1,4 +1,4 @@
-<?php namespace App\Views\ProductList;
+<?php namespace App\Services;
 
 use App\Services\ProcessDataRepository;
 
