@@ -7,13 +7,10 @@ class ProductsController {
         //te vajag info no GetProductList
 
         
-        return $this->view('ProductList', [
-            'gg' => [1,2],
-            'variables2' => 'abc'
-        ]);
+        return $this->view('ProductList');
     }
 
-    function view(string $name, $variables) 
+    function view(string $name) 
     {
         $template = __DIR__.'/../Views/'.$name.'.php';
         if(!file_exists($template)) {
@@ -22,9 +19,9 @@ class ProductsController {
 
 
         // ob_start();
-        if(is_array($variables)) {
-            extract($variables, EXTR_PREFIX_SAME, 'wddx');
-        }
+        // if(is_array($variables)) {
+        //     extract($variables, EXTR_PREFIX_SAME, 'wddx');
+        // }
 
         include $template;
 
