@@ -1,21 +1,20 @@
 <?php namespace App\Controllers;
 
-use App\Services\GetProductList;
+use App\Services\ProductService;
 
 class ProductsController {
+    private ProductService $productService;
     
     public function productList() 
     {        
-        $output = new GetProductList;
-        $this->output = new GetProductList;
+        $this->productService = new ProductService;
         
         return $this->view('ProductList', [
-            'gg' => $output->getList(),
-            'variablis2' => 'abc'
+            'gg' => $this->productService->getList()
         ]);
     }
 
-    function view(string $name, $variables2) 
+    function view(string $name, $variables) 
     {
         $template = __DIR__.'/../Views/'.$name.'.php';
         if(!file_exists($template)) {
@@ -24,8 +23,8 @@ class ProductsController {
 
 
         // ob_start();
-        if(is_array($variables2)) {
-            extract($variables2, EXTR_PREFIX_SAME, 'wddx');
+        if(is_array($variables)) {
+            extract($variables, EXTR_PREFIX_SAME, 'wddx');
         }
 
         include $template;
@@ -33,4 +32,14 @@ class ProductsController {
         // $renderedView = ob_get_clean();
         // return $renderedView;
     }
+
+    public function deleteData () {
+
+        $this->productService = new ProductService;
+
+        if(!empty($_POST)){
+            $this->productService->deleteProductService();
+        }        
+    }
+
 }

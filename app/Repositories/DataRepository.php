@@ -14,4 +14,10 @@ class DataRepository extends Database {
 
         return $data;
     }
+
+    public function deleteData() {
+        foreach($_POST['id'] as $id) {
+            $this->conn->query("DELETE from emails WHERE id = '$id'");
+        }
+    }
 }

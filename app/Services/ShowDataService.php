@@ -1,13 +1,13 @@
 <?php namespace App\Services;
 
-use App\Views\ProductList\GetProductList;
+use App\Views\ProductList\ProductService;
 
 class ShowDataService {
-    private GetProductList $getProductList;
+    private ProductService $getProductList;
 
     function __construct ()
     {
-        $this->getProductList = new GetProductList;
+        $this->getProductList = new ProductService;
     }
 
 
