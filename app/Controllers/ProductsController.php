@@ -4,6 +4,9 @@ class ProductsController {
 
     public function productList() 
     {
+        //te vajag info no GetProductList
+
+        
         return $this->view('ProductList', [
             'gg' => [1,2],
             'variables2' => 'abc'
@@ -16,7 +19,7 @@ class ProductsController {
         if(!file_exists($template)) {
             echo $template;
         }
-        echo $template;
+
 
         // ob_start();
         if(is_array($variables)) {
