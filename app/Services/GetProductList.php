@@ -15,12 +15,12 @@ class GetProductList {
 
     public function getList ()
     {
-        $output = '<ul class="tabs">';
+        $output = '<form action="" method="POST"><ul class="tabs">';
         foreach($this->repository->createList() as $keys) {
-            $output .= '<li><div><span>'.$keys[0].'</span><span>'.$keys[1].'</span><span>'.$keys[2].'</span><span>'.$keys[3].'</span</div></li>';
+            $output .= '<li><div><input type="checkbox" name="id[]" value="'.$keys[0].'"><span>'.$keys[1].'</span><span>'.$keys[2].'</span><span>'.$keys[3].'</span><span>'.$keys[4].'</span</div></li>';
 
         }
-        $output .= '</ul>';
+        $output .= '</ul></form>';
         return $output;
     }
 }

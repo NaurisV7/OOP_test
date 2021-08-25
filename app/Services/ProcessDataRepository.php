@@ -19,14 +19,14 @@ class ProcessDataRepository {
         foreach($this->repository->getData() as $keys) {
             switch($keys['switcher']) {
                 case 'dvd':
-                    $data[] = [$keys['sku'], $keys['name'], $keys['price'].' $', 'Size: '.$keys['size'].' MB'];
+                    $data[] = [$keys['id'], $keys['sku'], $keys['name'], $keys['price'].' $', 'Size: '.$keys['size'].' MB'];
                     break;
                 case 'furniture':
                     $fullSize = $keys['height'] . 'x' . $keys['width'] . 'x' . $keys['length'];
-                    $data[] = [$keys['sku'], $keys['name'], $keys['price'].' $', 'Dimension: '.$fullSize];
+                    $data[] = [$keys['id'], $keys['sku'], $keys['name'], $keys['price'].' $', 'Dimension: '.$fullSize];
                     break;
                 case 'book':
-                    $data[] = [$keys['sku'], $keys['name'], $keys['price'].' $', 'Weight: '.$keys['weight'].'KG'];
+                    $data[] = [$keys['id'], $keys['sku'], $keys['name'], $keys['price'].' $', 'Weight: '.$keys['weight'].'KG'];
                     break;            
             }
         }

@@ -1,10 +1,9 @@
-<?php namespace App\Views;
-
-use App\Services\GetProductList as GetProductList;
+<?php
 
 
-$output = new GetProductList;
-echo $output->getList();
+print '<pre>'.print_r($gg, true).'</pre>';
+print '<pre>'.print_r($variablis2, true).'</pre>';
+
 
 
 
