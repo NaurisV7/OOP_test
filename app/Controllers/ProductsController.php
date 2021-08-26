@@ -13,11 +13,15 @@ class ProductsController {
     public function productList() 
     {        
 
-        $this->deleteData();
+        $this->delete();
+        if(!empty($_POST['add'])) {
+            $this->productAdd();
+        } else {
+            return $this->view('ProductList', [
+                'gg' => $this->productService->getList()
+            ]); 
+        }
         
-        return $this->view('ProductList', [
-            'gg' => $this->productService->getList()
-        ]);
     }
 
     function view(string $name, $variables) 
@@ -26,7 +30,6 @@ class ProductsController {
         if(!file_exists($template)) {
             echo $template;
         }
-
 
         // ob_start();
         if(is_array($variables)) {
@@ -39,12 +42,20 @@ class ProductsController {
         // return $renderedView;
     }
 
-    public function deleteData () 
+    public function delete () 
     {
 
-        if(!empty($_POST)){
-            $this->productService->deleteProductService();
+        if(!empty($_POST)){;
+            $this->productService->delete();
         }        
+    }
+
+    public function productAdd ()
+    {
+        return $this->view('ProductAdd', [
+            'gg' => [1,2]
+        ]);
+
     }
 
     

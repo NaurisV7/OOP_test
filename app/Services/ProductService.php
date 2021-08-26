@@ -15,23 +15,23 @@ class ProductService {
     }
 
     public function getList ()
+    
     {
-        $output = '
-        <form action="" method="POST">
-        <button type="submit">Submit</button>
-        <ul class="tabs">
-        ';
+        $output = '';
         foreach($this->repository->createList() as $keys) {
             $output .= '<li><div><input type="checkbox" name="id[]" value="'.$keys[0].'"><span>'.$keys[1].'</span><span>'.$keys[2].'</span><span>'.$keys[3].'</span><span>'.$keys[4].'</span</div></li>';
 
         }
-        $output .= '</ul></form>';
+
         return $output;
     }
 
-    public function deleteProductService ()
+    public function delete ()
     {
-        $this->dataRepository->deleteData();
+        if(!empty($_POST['id'])){
+            $this->dataRepository->delete();
+        }
+        
     }
     
 }

@@ -15,7 +15,7 @@ class DataRepository extends Database {
         return $data;
     }
 
-    public function deleteData() {
+    public function delete() {
         foreach($_POST['id'] as $id) {
             $this->conn->query("DELETE from furniture WHERE id = '$id'");
         }
