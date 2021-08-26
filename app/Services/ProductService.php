@@ -1,16 +1,17 @@
 <?php namespace App\Services;
 
 use App\Services\ProcessDataRepository;
+use App\Repositories\DataRepository;
 
 class ProductService {
 
-
-
     private ProcessDataRepository $repository;
+    private DataRepository $dataRepository;
 
     function __construct ()
     {
         $this->repository = new ProcessDataRepository;
+        $this->dataRepository = new DataRepository;
     }
 
     public function getList ()
@@ -26,6 +27,11 @@ class ProductService {
         }
         $output .= '</ul></form>';
         return $output;
+    }
+
+    public function deleteProductService ()
+    {
+        $this->dataRepository->deleteData();
     }
     
 }

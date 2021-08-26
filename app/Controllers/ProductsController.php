@@ -4,10 +4,16 @@ use App\Services\ProductService;
 
 class ProductsController {
     private ProductService $productService;
-    
+
+    function __construct ()
+    {
+        $this->productService = new ProductService;
+    }
+
     public function productList() 
     {        
-        $this->productService = new ProductService;
+
+        $this->deleteData();
         
         return $this->view('ProductList', [
             'gg' => $this->productService->getList()
@@ -33,13 +39,14 @@ class ProductsController {
         // return $renderedView;
     }
 
-    public function deleteData () {
-
-        $this->productService = new ProductService;
+    public function deleteData () 
+    {
 
         if(!empty($_POST)){
             $this->productService->deleteProductService();
         }        
     }
+
+    
 
 }
