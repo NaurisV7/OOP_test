@@ -6,13 +6,13 @@ print '
     <input type="submit" value="Save" name="save">
     <input type="submit" value="Cancel" name="cancel">
     <label for="sku">SKU</label>
-    <input type="text" id="sku" name="sku" required>
+    <input type="text" id="sku" name="sku">
     <label for="name">Name</label>
-    <input type="text" id="name" name="name" required>
+    <input type="text" id="name" name="name">
     <label for="price">Price</label>
-    <input type="text" id="price" name="price" required>
+    <input type="text" id="price" name="price">
     <label for="options">Type Switcher</label>
-    <select id="options" name="choose" onchange="myFunction()" required>
+    <select id="options" name="choose" onchange="myFunction()">
         <option value="dvd">Shelf</option>
         <option value="furniture">Furniture</option>
         <option value="book">Appliances</option>
@@ -38,5 +38,3 @@ print '
     </div>
 </form>
 ';
-
-print_r($_POST);

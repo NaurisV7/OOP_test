@@ -14,7 +14,7 @@ class ProductsController {
     {        
 
         $this->delete();
-        if(!empty($_POST['add'])) {
+        if(!empty($_POST['add']) || !empty($_POST['save'])) {
             $this->productAdd();
         } else {
             return $this->view('ProductList', [
@@ -52,9 +52,15 @@ class ProductsController {
 
     public function productAdd ()
     {
+        if(!empty($_POST['save'])) {
+            $this->productService->addList();
+        }
+        
         return $this->view('ProductAdd', [
             'gg' => [1,2]
         ]);
+
+        
 
     }
 

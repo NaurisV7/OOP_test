@@ -10,6 +10,8 @@ print '<pre>
 '</ul></form></pre>';
 //print '<pre>'.print_r($variablis2, true).'</pre>';
 
+print_r($_POST);
+
 
 
 

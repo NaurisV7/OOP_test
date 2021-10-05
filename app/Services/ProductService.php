@@ -33,5 +33,26 @@ class ProductService {
         }
         
     }
+
+    public function addList ()
+    {
+        if(!empty($_POST['sku'])) {
+            array_shift($_POST);
+            $data = $_POST;
+
+            foreach( $data as $row ) {
+                echo $row;
+            }
+
+            
+
+
+
+            //print_r($sql);
+
+            //$this->dataRepository->addData($data);
+
+        }
+    }
     
 }
