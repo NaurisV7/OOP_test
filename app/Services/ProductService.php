@@ -40,9 +40,9 @@ class ProductService {
             array_shift($_POST);
             $data = $_POST;
 
-            foreach( $data as $row ) {
-                echo $row;
-            }
+            // foreach( $data as $row ) {
+            //     echo $row;
+            // }
 
             
 
@@ -50,7 +50,7 @@ class ProductService {
 
             //print_r($sql);
 
-            //$this->dataRepository->addData($data);
+            $this->dataRepository->addData($data);
 
         }
     }
