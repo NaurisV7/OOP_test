@@ -2,7 +2,7 @@
 
 
 print '
-<form action="" method="POST">
+<form id="product_form" action="" method="POST">
     <input type="submit" value="Save" name="save">
     <input type="submit" value="Cancel" name="cancel">
     <label for="sku">SKU</label>
@@ -12,10 +12,10 @@ print '
     <label for="price">Price</label>
     <input type="text" id="price" name="price">
     <label for="options">Type Switcher</label>
-    <select id="options" name="choose" onchange="myFunction()">
-        <option value="dvd">Shelf</option>
+    <select id="productType" name="productType" onchange="myFunction()">
+        <option value="dvd">DVD</option>
         <option value="furniture">Furniture</option>
-        <option value="book">Appliances</option>
+        <option value="book">Book</option>
     </select>   
     <div class ="hidden" id="sizediv">
         <label for="size">Size</label>

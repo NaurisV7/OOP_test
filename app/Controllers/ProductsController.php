@@ -1,13 +1,17 @@
 <?php namespace App\Controllers;
 
 use App\Services\ProductService;
+use App\Validations\ProductValidation;
 
 class ProductsController {
     private ProductService $productService;
+    private ProductValidation $productValidation;
+    private string $errors = "";
 
     function __construct ()
     {
         $this->productService = new ProductService;
+        $this->productValidation = new ProductValidation;
     }
 
     public function productList() 
@@ -53,8 +57,17 @@ class ProductsController {
     public function productAdd ()
     {
         if(!empty($_POST['save'])) {
-            $this->productService->addList();
-        }
+
+
+            print_r($_POST);
+            $this->errors = $this->productValidation->validate();
+            echo $this->errors;
+
+            
+        } 
+        // else if () {
+
+        // }
         
         return $this->view('ProductAdd', [
             'gg' => [1,2]

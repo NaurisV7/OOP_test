@@ -19,7 +19,7 @@ class ProductService {
     {
         $output = '';
         foreach($this->repository->createList() as $keys) {
-            $output .= '<li><div><input type="checkbox" name="id[]" value="'.$keys[0].'"><span>'.$keys[1].'</span><span>'.$keys[2].'</span><span>'.$keys[3].'</span><span>'.$keys[4].'</span</div></li>';
+            $output .= '<li><div><input class="delete-checkbox" type="checkbox" name="id[]" value="'.$keys[0].'"><span>'.$keys[1].'</span><span>'.$keys[2].'</span><span>'.$keys[3].'</span><span>'.$keys[4].'</span</div></li>';
 
         }
 
@@ -38,19 +38,9 @@ class ProductService {
     {
         if(!empty($_POST['sku'])) {
             array_shift($_POST);
-            $data = $_POST;
-
-            // foreach( $data as $row ) {
-            //     echo $row;
-            // }
-
             
 
-
-
-            //print_r($sql);
-
-            $this->dataRepository->addData($data);
+            $this->dataRepository->addData($_POST);
 
         }
     }

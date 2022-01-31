@@ -25,7 +25,6 @@ class DataRepository extends Database {
 
         $dbData = ['`sku`', '`name`', '`price`', '`switcher`', '`size`', '`height`', '`width`', '`length`', '`weight`'];
         $result = $this->conn->query("INSERT INTO furniture (".implode(', ', $dbData).")  VALUES ('".$data['sku']."', '".$data['name']."', ".$data['price'].", '".$data['choose']."', ".$data['size'].", ".$data['height'].", ".$data['width'].", ".$data['length'].", ".$data['weight'].");");
-
         return $result;
     }
 }
